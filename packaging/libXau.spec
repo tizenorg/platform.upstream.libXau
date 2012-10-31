@@ -10,9 +10,6 @@ Source:         %{name}-%{version}.tar.bz2
 BuildRequires:  pkgconfig(xorg-macros)
 BuildRequires:  pkgconfig(xproto)
 
-Requires(post):   /sbin/ldconfig
-Requires(postun): /sbin/ldconfig
-
 %description
 This is a very simple mechanism for providing individual access to an X Window
 System display.It uses existing core protocol and library hooks for specifying
@@ -32,9 +29,7 @@ Development headers and files for %{name}
 %setup -q
 
 %build
-
-./autogen.sh
-%reconfigure
+%configure
 
 make %{?_smp_mflags}
 
