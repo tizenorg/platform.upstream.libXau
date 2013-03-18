@@ -2,11 +2,10 @@ Name:           libXau
 Version:        1.0.7
 Release:        1
 License:        MIT
-Summary:        X
+Summary:        X Authorization routines
 Url:            http://www.x.org/
-Group:          System/Libraries
+Group:          Graphics/X Window System
 Source:         %{name}-%{version}.tar.bz2
-
 BuildRequires:  pkgconfig(xorg-macros)
 BuildRequires:  pkgconfig(xproto)
 
@@ -41,9 +40,11 @@ make %{?_smp_mflags}
 
 
 %post   -p /sbin/ldconfig
+
 %postun -p /sbin/ldconfig
 
 %files
+%license COPYING
 %{_libdir}/*.so.*
 
 %files devel
