@@ -6,6 +6,7 @@ Summary:        X Authorization routines
 Url:            http://www.x.org/
 Group:          Graphics/X Window System
 Source:         %{name}-%{version}.tar.bz2
+Source1001: 	libXau.manifest
 BuildRequires:  pkgconfig(xorg-macros)
 BuildRequires:  pkgconfig(xproto)
 
@@ -26,6 +27,7 @@ Development headers and files for %{name}
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %configure
@@ -44,10 +46,12 @@ make %{?_smp_mflags}
 %postun -p /sbin/ldconfig
 
 %files
+%manifest %{name}.manifest
 %license COPYING
 %{_libdir}/*.so.*
 
 %files devel
+%manifest %{name}.manifest
 %dir %{_includedir}/X11
 %{_includedir}/X11/*.h
 %{_libdir}/*.so
