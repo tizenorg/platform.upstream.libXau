@@ -1,6 +1,6 @@
 Name:           libXau
 Version:        1.0.7
-Release:        1
+Release:        2
 License:        MIT
 Summary:        X Authorization routines
 Url:            http://www.x.org/
@@ -30,7 +30,7 @@ Development headers and files for %{name}
 cp %{SOURCE1001} .
 
 %build
-%configure
+%configure --disable-static
 
 make %{?_smp_mflags}
 
