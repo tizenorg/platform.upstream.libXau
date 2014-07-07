@@ -10,6 +10,10 @@ Source1001: 	libXau.manifest
 BuildRequires:  pkgconfig(xorg-macros)
 BuildRequires:  pkgconfig(xproto)
 
+%if !%{with x}
+ExclusiveArch:
+%endif
+
 %description
 This is a very simple mechanism for providing individual access to an X Window
 System display.It uses existing core protocol and library hooks for specifying
