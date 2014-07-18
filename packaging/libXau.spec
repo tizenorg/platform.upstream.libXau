@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:           libXau
 Version:        1.0.8
 Release:        2
